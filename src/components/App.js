@@ -2,6 +2,9 @@ import React from "react";
 import Nav from "./Nav";
 
 import hogs from "../porkers_data";
+import FilterHog from "./FilterHog"
+import HogList from "./HogList"
+
 /*
 Notes
 Components: 
@@ -12,11 +15,12 @@ FilterHogs: button for filtering by greased or not
 BONUS: hide, add, and semantic cards
 */
 function App() {
+	console.log(hogs)
 	return (
 		<div className="App">
 			<Nav />
 			<FilterHog/>
-			<HogList/>
+			<HogList hogs={hogs}/>
 		</div>
 	);
 }
