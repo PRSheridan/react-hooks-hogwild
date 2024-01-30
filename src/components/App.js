@@ -16,10 +16,14 @@ BONUS: hide, add, and semantic cards
 */
 function App() {
 	console.log(hogs)
+	function handleSortBy(event) {
+		event.
+	}
+
 	return (
 		<div className="App">
 			<Nav />
-			<FilterHog/>
+			<FilterHog onSortBy={handleSortBy}/>
 			<HogList hogs={hogs}/>
 		</div>
 	);
