@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Nav from "./Nav";
 
 import hogs from "../porkers_data";
@@ -8,23 +8,29 @@ import HogList from "./HogList"
 /*
 Notes
 Components: 
-App: imported list
-Hog: Title card (name and image) + click to display more (specialty, weight, greased, and highest medal achieved) + isclicked?
+DONE App: imported list, sort
+DONE Hog: Title card (name and image) + click to display more (specialty, weight, greased, and highest medal achieved) + isclicked?
 HogList: filter hogs greased/not + buttons for sort by name/weight
 FilterHogs: button for filtering by greased or not
 BONUS: hide, add, and semantic cards
 */
 function App() {
-	console.log(hogs)
+	const [sort, setSort] = useState("weight")
+	const [greaseClicked, setGreaseClicked] = useState(false)
+
 	function handleSortBy(event) {
-		event.
+		setSort(event.target.innerText)
+	}
+
+	function handleClickGreased() {
+		setGreaseClicked((greaseClicked) => !greaseClicked)
 	}
 
 	return (
 		<div className="App">
 			<Nav />
-			<FilterHog onSortBy={handleSortBy}/>
-			<HogList hogs={hogs}/>
+			<FilterHog onSortBy={handleSortBy} onClickGreased={handleClickGreased}/>
+			<HogList hogs={hogs} sort={sort} greaseClicked={greaseClicked}/>
 		</div>
 	);
 }

@@ -1,18 +1,21 @@
 import React from "react";
 
-function FilterHog(handleSortBy) {
+function FilterHog( {onSortBy, onClickGreased} ) {
     return (
-        <div>
+        <div className="headerText">
         <h5>Sort by:</h5>
         {["name", "weight"].map((element) => {
             return (
                 <button 
                     key={element} 
-                    onClick={handleSortBy}>
+                    onClick={onSortBy}>
                     {element}
                 </button>
             )
         })}
+            <button onClick={onClickGreased}>
+                Only Greased Hogs
+            </button>
         </div>
     )
 }

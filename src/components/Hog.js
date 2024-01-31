@@ -15,7 +15,7 @@ function Hog( {hog} ) {
                     <li>{`Specialty: ${hog.specialty}`}</li>
                     <li>{`Weight: ${hog.weight}`}</li>
                     <li>{hog.greased ? "Greased hog" : "Ain't greased"}</li>
-                    <li className="achievementText">{`Highest Medal Acheived: ${hog["highest medal acheived"]}`}</li>
+                    <li className="achievementText">{`Highest Medal Acheived: ${hog["highest medal achieved"]}`}</li>
                 </ul>
             </div>
         )} else {
