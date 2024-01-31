@@ -12,15 +12,9 @@ function HogList( {hogs, sort, greaseClicked} ) {
         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     }
 
-    const filteredHogs = filterHogs(hogs)
+    const sortedHogs = sortHogs(hogs)
 
-    function filterHogs() {
-//not returning greased hogs ??
-        if (greaseClicked) { 
-            console.log(hogs)
-            hogs.filter((hog) => { return hog.greased })
-            console.log(hogs)
-        }
+    function sortHogs() {
         if (sort === "weight") 
         { hogs.sort(compareWeight) } else 
         { hogs.sort(compareName) }
@@ -28,9 +22,12 @@ function HogList( {hogs, sort, greaseClicked} ) {
     }
 
     return (
-        filteredHogs.map((hog) => {
-            return <Hog key={hog.name} hog={hog}/>
-        })
+        sortedHogs
+        .filter((hog) => ( greaseClicked
+            ? hog.greased
+            : hog)).map((hog) => 
+            <Hog key={hog.name} hog={hog}/>
+        )
     )
 }
 

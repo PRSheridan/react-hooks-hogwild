@@ -1,6 +1,6 @@
 import React from "react";
 
-function FilterHog( {onSortBy, onClickGreased} ) {
+function FilterHog( {onSortBy, onClickGreased, greaseClicked} ) {
     return (
         <div className="headerText">
         <h5>Sort by:</h5>
@@ -14,7 +14,7 @@ function FilterHog( {onSortBy, onClickGreased} ) {
             )
         })}
             <button onClick={onClickGreased}>
-                Only Greased Hogs
+                {(greaseClicked ? "remove filter" : "greased only")}
             </button>
         </div>
     )

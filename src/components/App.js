@@ -29,7 +29,7 @@ function App() {
 	return (
 		<div className="App">
 			<Nav />
-			<FilterHog onSortBy={handleSortBy} onClickGreased={handleClickGreased}/>
+			<FilterHog onSortBy={handleSortBy} onClickGreased={handleClickGreased} greaseClicked={greaseClicked}/>
 			<HogList hogs={hogs} sort={sort} greaseClicked={greaseClicked}/>
 		</div>
 	);
