@@ -2,8 +2,8 @@ import React from "react";
 
 function FilterHog( {onSortBy, onClickGreased, greaseClicked} ) {
     return (
-        <div className="headerText">
-        <h5>Sort by:</h5>
+        <span className="headerText">
+        <h3>Sort by:</h3>
         {["name", "weight"].map((element) => {
             return (
                 <button 
@@ -16,7 +16,7 @@ function FilterHog( {onSortBy, onClickGreased, greaseClicked} ) {
             <button onClick={onClickGreased}>
                 {(greaseClicked ? "remove filter" : "greased only")}
             </button>
-        </div>
+        </span>
     )
 }
 
